@@ -20,7 +20,7 @@ class GraphViewContainer extends Component {
         return (
             <div>
                 <h1>The SILVER SCREEN</h1>
-                <textarea value={this.state.searchTerm} onChange={(target) => {this.setState({searchTerm: target.val})}}/>
+                <textarea value={this.state.searchTerm} onChange={(event) => {this.setState({searchTerm: event.target.value});}}/>
                 <LineChart data={this.state.graphData} options={this.state.graphOptions} width="600" height="250" redraw/>
                 <h1>{this.state.graphTitle}</h1>
 
