@@ -50,5 +50,98 @@ describe("Series Parser", () => {
       const result = parser.seriesParse(input);
       expect(result).toMatchObject(expectedParsedResult);
    });
+
+   it('should return an empty object if the input is invalid', () => {
+       let parser = new DataParser();
+       const invalidInput = {
+           "this is invalid": "still invalid"
+       };
+
+       const expectedParsedResult = {
+           seasonCount: 0,
+           seriesRating: 0
+       };
+       const result = parser.seriesParse(invalidInput);
+       expect(result).toMatchObject(expectedParsedResult);
+
+   })
 });
 
+describe("DataSet creation", () => {
+    it('should exist', () => {
+       let parser = new DataParser();
+       expect(parser.episodeSetParser).toBeDefined();
+    });
+
+    it('should take a valid result from the season api result and convert to a dataset for a season', () => {
+        let parser = new DataParser();
+        const input = {
+            "Title": "Breaking Bad",
+            "Season": "1",
+            "totalSeasons": "5",
+            "Episodes": [
+                {
+                    "Title": "Pilot",
+                    "Released": "2008-01-20",
+                    "Episode": "1",
+                    "imdbRating": "8.9",
+                    "imdbID": "tt0959621"
+                },
+                {
+                    "Title": "Cat's in the Bag...",
+                    "Released": "2008-01-27",
+                    "Episode": "2",
+                    "imdbRating": "8.7",
+                    "imdbID": "tt1054724"
+                },
+                {
+                    "Title": "...And the Bag's in the River",
+                    "Released": "2008-02-10",
+                    "Episode": "3",
+                    "imdbRating": "8.7",
+                    "imdbID": "tt1054725"
+                },
+                {
+                    "Title": "Cancer Man",
+                    "Released": "2008-02-17",
+                    "Episode": "4",
+                    "imdbRating": "8.3",
+                    "imdbID": "tt1054726"
+                },
+                {
+                    "Title": "Gray Matter",
+                    "Released": "2008-02-24",
+                    "Episode": "5",
+                    "imdbRating": "8.3",
+                    "imdbID": "tt1054727"
+                },
+                {
+                    "Title": "Crazy Handful of Nothin'",
+                    "Released": "2008-03-02",
+                    "Episode": "6",
+                    "imdbRating": "9.2",
+                    "imdbID": "tt1054728"
+                },
+                {
+                    "Title": "A No-Rough-Stuff-Type Deal",
+                    "Released": "2008-03-09",
+                    "Episode": "7",
+                    "imdbRating": "8.8",
+                    "imdbID": "tt1054729"
+                }
+            ],
+            "Response": "True"
+        };
+        const expectedResponse = [
+            {episodeNumber: 1, episodeRating: 8.9},
+            {episodeNumber: 2, episodeRating: 8.7},
+            {episodeNumber: 3, episodeRating: 8.7},
+            {episodeNumber: 4, episodeRating: 8.3},
+            {episodeNumber: 5, episodeRating: 8.3},
+            {episodeNumber: 6, episodeRating: 9.2},
+            {episodeNumber: 7, episodeRating: 8.8}
+        ];
+        const result = parser.episodeSetParser(input);
+        expect(result).toMatchObject(expectedResponse);
+    });
+});
