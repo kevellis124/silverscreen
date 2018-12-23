@@ -36,7 +36,6 @@ describe('dataset aggregator', () => {
             pointHitRadius: 10,
             showLine: true,
             lineTension: 0,
-            tooltipTemplate: "adsf",
             data: [
             { x: 1, y: 8.9 },
             { x: 2, y: 8.7 },

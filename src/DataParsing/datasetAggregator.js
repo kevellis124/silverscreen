@@ -1,5 +1,6 @@
 import DataParser from './dataParsing';
-
+import Api from '../Api/Api';
+const parser = new DataParser();
 export default class DatasetAggregator {
     makeDataSet(seasonData) {
         const data = seasonData["episodeData"].map((item) => {
@@ -25,8 +26,43 @@ export default class DatasetAggregator {
             pointHitRadius: 10,
             showLine: true,
             lineTension: 0,
-            tooltipTemplate: "adsf",
             data: data
         }
     }
+
+    takeSeriesInfoAndReturnEpisodeData(parsedSeriesInfo) {
+        return this.fetchAllEpisodesForSeries(parsedSeriesInfo)
+            .then(values => values.map((json) => parser.episodeSetParser(json)))
+            .then(values => {
+                let dataSets = [];
+                values.forEach((season) => {
+                    dataSets.push(this.makeDataSet(season))
+                });
+                return dataSets;
+            });
+    }
+
+    fetchAllEpisodesForSeries(parsedSeriesInfo) {
+        let seasonsOfEpisodes = [];
+        for (let i = 0; i < parsedSeriesInfo.seasonCount; i++) {
+            seasonsOfEpisodes[i] = {
+                season: i + 1
+            };
+        }
+
+        return Promise.all(seasonsOfEpisodes.map((item) => {
+            return Api.fetchSeasonInfoOmdb(parsedSeriesInfo.seriesName, item.season)
+        }));
+    }
+
+    setXCoordinatesOfData(dataSets) {
+        console.log(dataSets);
+        return dataSets
+    }
+
+    // static getEpisodesFromSeason(currentSeason, numSeasons) {
+    //     if (currentSeason > numSeasons)
+    //         return null;
+    //     return getEpisodesFromSeason(currentSeason + 1, numSeasons)
+    // }
 }

@@ -44,6 +44,7 @@ describe("Series Parser", () => {
           "Response": "True"
       };
       const expectedParsedResult = {
+        seriesName: "Breaking Bad",
         seasonCount: 5,
         seriesRating: 9.5
       };
@@ -58,6 +59,7 @@ describe("Series Parser", () => {
        };
 
        const expectedParsedResult = {
+           seriesName: "",
            seasonCount: 0,
            seriesRating: 0
        };
@@ -132,7 +134,7 @@ describe("DataSet creation", () => {
             ],
             "Response": "True"
         };
-        const expectedResponse = [
+        const expectedResponse = {episodeData: [
             {episodeNumber: 1, episodeRating: 8.9},
             {episodeNumber: 2, episodeRating: 8.7},
             {episodeNumber: 3, episodeRating: 8.7},
@@ -140,7 +142,9 @@ describe("DataSet creation", () => {
             {episodeNumber: 5, episodeRating: 8.3},
             {episodeNumber: 6, episodeRating: 9.2},
             {episodeNumber: 7, episodeRating: 8.8}
-        ];
+        ],
+            season: 1
+        };
         const result = parser.episodeSetParser(input);
         expect(result).toMatchObject(expectedResponse);
     });
