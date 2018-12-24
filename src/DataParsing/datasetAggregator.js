@@ -56,13 +56,9 @@ export default class DatasetAggregator {
     }
 
     setXCoordinatesOfData(dataSets) {
-        console.log(dataSets);
+        //iterate through seasons and begin incrementing the X coordinate with
+        //one number skipped between seasons
+
         return dataSets
     }
-
-    // static getEpisodesFromSeason(currentSeason, numSeasons) {
-    //     if (currentSeason > numSeasons)
-    //         return null;
-    //     return getEpisodesFromSeason(currentSeason + 1, numSeasons)
-    // }
 }
