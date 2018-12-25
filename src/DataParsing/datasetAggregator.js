@@ -55,10 +55,19 @@ export default class DatasetAggregator {
         }));
     }
 
-    setXCoordinatesOfData(dataSets) {
+    setXCoordinatesOfData(graphData) {
+        let runningCoordinateCount = 1;
         //iterate through seasons and begin incrementing the X coordinate with
         //one number skipped between seasons
+        console.log(graphData["datasets"]);
+        graphData.datasets.forEach((set) => {
+           set["data"].forEach((coordinate) => {
+               coordinate["x"] = runningCoordinateCount;
+               runningCoordinateCount = runningCoordinateCount + 1;
+           } );
 
-        return dataSets
+            runningCoordinateCount = runningCoordinateCount + 1;
+        });
+        return graphData;
     }
 }
