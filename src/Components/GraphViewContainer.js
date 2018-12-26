@@ -15,7 +15,7 @@ class GraphViewContainer extends Component {
         super(props);
         this.state = {
             graphTitle: "Movie/Show Title",
-            graphData:  breakingBadData,
+            graphData:  {},
             graphOptions: sampleGraphOptions,
             searchTerm: "Breaking Bad",
             loading: false

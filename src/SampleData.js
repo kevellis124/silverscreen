@@ -72,7 +72,7 @@ export const sampleGraphOptions = {
     scales: {
         yAxes: [{
             ticks: {display:true,
-                suggestedMin: 0,
+                suggestedMin: 3,
                 suggestedMax: 10,
                 beginAtZero: true
             }
