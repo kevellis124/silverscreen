@@ -12,7 +12,7 @@ deploy:
   secret_access_key:
     secure: O21xq1MHD05+zmBUIJ2KACXTum+DtOKxwuiyFy0CHKlu9sXu9KXSJ3v0eaXz4zKtfbhfDtxroFQVyWEyPsxl78MFchAiPuVnus8ZYoqNxT+b61hDkB0by1etWxIujIg3o/rFz2gQkBCO/zTpE2PTfJ1iPNr3bEOOvd3fQkyEcyVUTUt9lWfi2FOJg0Upyj/s2kYqqnbVr/TELM1mBuxuk7mUpeee/qqepBuvRFD1AH8os7WPywP9oTEicW4+R3q3G6h+B/n53UE9wMaQc5qcE6DoxmBG4/nHwSJIFfi+T520dx532t58/QjGGzkmsb9SqH+7f4KS/KusIxQwcodSAhsPf2r71foGfP5PyLM0UoFUJ7BNIRbselbub1uDzp4nfi57hbkZlzVUGXhF4KsS8Q1rhNekoHO7Ri/YedwkPR2wI/GUPogFJ7OqBebmBiy6LcWawZs6m9z0dEKRR4zSpDPg3fXVnzVA0/gPT5LlVhvUqEavdiFOP9aDW5pM8DdXT3wt1acJlhRuL68upFAKaaHaFMi4vIDXCfK3Q8qQ2lepoa1cpP02YaU2dpI3DVWsI+WemCL+uBCgUN4OcSYUurd0rFRt8i8CyE8kin7FwLCeB7eTWHzTZLUtTpttPUPt6Zq9wtudikXd6Kwa/7si2htaTAIOyQW/So68ClNkhYU=
   bucket: silverscreen.kevinellis.io
-  local-dir: ./build
+  local-dir: build/
   acl: public_read
   on:
     repo: kevellis124/silverscreen
