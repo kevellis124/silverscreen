@@ -55,7 +55,7 @@ class GraphViewContainer extends Component {
                 <h1>{this.state.graphTitle}</h1>
                 <textarea value={this.state.searchTerm} onChange={(event) => {this.setState({searchTerm: event.target.value});}}/>
                 <button disabled={this.state.loading} onClick={this.handleTitleSearch}>Submit</button>
-                <h1 style={{fontSize : '100px'}} >BETA</h1>
+                <h1 style={{fontSize : '100px'}} >THIS IS A TEST BRANCH</h1>
             </div>)
     }
 };
