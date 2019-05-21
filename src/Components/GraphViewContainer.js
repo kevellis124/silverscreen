@@ -3,8 +3,7 @@ import {Scatter} from 'react-chartjs-2';
 import DataParser from '../DataParsing/dataParsing';
 import DatasetAggregator from '../DataParsing/datasetAggregator';
 import Api from '../Api/Api';
-import {breakingBadData, sampleGraphOptions} from '../SampleData';
-import {searchForShow} from '../Api/NetworkAccess'
+import {sampleGraphOptions} from '../SampleData';
 
 const parser = new DataParser();
 const aggregator = new DatasetAggregator();
@@ -43,8 +42,8 @@ class GraphViewContainer extends Component {
 5
     render() {
         //set the graph data for development. Will remove later.
-        let graphData = breakingBadData;
-        let graphOptions = sampleGraphOptions;
+        // let graphData = breakingBadData;
+        // let graphOptions = sampleGraphOptions;
 
         var divStyle = {
             float: 'left',

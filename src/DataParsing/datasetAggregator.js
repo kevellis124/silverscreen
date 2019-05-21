@@ -4,11 +4,9 @@ const parser = new DataParser();
 export default class DatasetAggregator {
     makeDataSet(seasonData) {
         const data = seasonData["episodeData"].map((item) => {
-            {
-                return {
-                    x: item["episodeNumber"],
-                    y: item["episodeRating"]
-                }
+            return {
+                x: item["episodeNumber"],
+                y: item["episodeRating"]
             }
         });
         const color = 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')';
