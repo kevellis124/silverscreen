@@ -45,12 +45,12 @@ class GraphViewContainer extends Component {
         // let graphData = breakingBadData;
         // let graphOptions = sampleGraphOptions;
 
-        var divStyle = {
-            float: 'left',
-            width: '50%'
-        };
+        // var divStyle = {
+        //     float: 'left',
+        //     width: '50%'
+        // };
         return (
-            <div style={divStyle}>
+            <di>
                 <Scatter data={this.state.graphData} options={this.state.graphOptions}/>
                 <h1>{this.state.graphTitle}</h1>
                 <textarea value={this.state.searchTerm} onChange={(event) => {this.setState({searchTerm: event.target.value});}}/>
