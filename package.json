@@ -4,11 +4,15 @@
   "private": true,
   "dependencies": {
     "chart.js": "^2.1.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "enzyme-to-json": "^3.3.5",
     "react": "^16.6.3",
     "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.6.3",
     "react-linechart": "^1.1.12",
     "react-scripts": "2.1.1",
+    "react-test-renderer": "^16.8.6",
     "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
@@ -25,5 +29,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "jest-canvas-mock": "^2.1.0"
+  }
 }

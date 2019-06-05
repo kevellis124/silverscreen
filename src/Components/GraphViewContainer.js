@@ -39,11 +39,9 @@ class GraphViewContainer extends Component {
                 loading:false
             }));
     };
-5
+
     render() {
         //set the graph data for development. Will remove later.
-        // let graphData = breakingBadData;
-        // let graphOptions = sampleGraphOptions;
 
         // var divStyle = {
         //     float: 'left',
@@ -58,6 +56,6 @@ class GraphViewContainer extends Component {
                 <h1 style={{fontSize : '100px'}} >BETA</h1>
             </div>)
     }
-};
+}
 
 export default GraphViewContainer;
