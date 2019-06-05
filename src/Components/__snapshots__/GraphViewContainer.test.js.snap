@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <Scatter
+    data={Object {}}
+    options={
+      Object {
+        "scales": Object {
+          "yAxes": Array [
+            Object {
+              "ticks": Object {
+                "beginAtZero": true,
+                "display": true,
+                "suggestedMax": 10,
+                "suggestedMin": 3,
+              },
+            },
+          ],
+        },
+        "title": Object {
+          "display": true,
+          "text": "The Silver Screen",
+        },
+        "tooltips": Object {
+          "callbacks": Object {
+            "label": [Function],
+          },
+        },
+      }
+    }
+  />
+  <h1>
+    Movie/Show Title
+  </h1>
+  <textarea
+    onChange={[Function]}
+    value="Breaking Bad"
+  />
+  <button
+    disabled={false}
+    onClick={[Function]}
+  >
+    Submit
+  </button>
+  <h1
+    style={
+      Object {
+        "fontSize": "100px",
+      }
+    }
+  >
+    BETA
+  </h1>
+</div>
+`;
