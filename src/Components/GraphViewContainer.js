@@ -3,6 +3,7 @@ import {Scatter} from 'react-chartjs-2';
 import DataParser from '../DataParsing/dataParsing';
 import DatasetAggregator from '../DataParsing/datasetAggregator';
 import Api from '../Api/Api';
+import Loader from 'react-loader-spinner';
 import {sampleGraphOptions} from '../SampleData';
 
 const parser = new DataParser();
@@ -47,9 +48,11 @@ class GraphViewContainer extends Component {
         //     float: 'left',
         //     width: '50%'
         // };
+
         return (
             <div>
-                <Scatter data={this.state.graphData} options={this.state.graphOptions}/>
+                {this.state.loading && <Loader type="Circles" color="#3D77FF" height={80} width={80}/>}
+                {!this.state.loading && <Scatter data={this.state.graphData} options={this.state.graphOptions}/>}
                 <h1>{this.state.graphTitle}</h1>
                 <textarea value={this.state.searchTerm} onChange={(event) => {this.setState({searchTerm: event.target.value});}}/>
                 <button disabled={this.state.loading} onClick={this.handleTitleSearch}>Submit</button>

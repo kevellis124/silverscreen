@@ -5,8 +5,7 @@ class Footer extends Component {
     render () {
         return (
             <div className="footer">
-                <span> Kevin Ellis </span>
-                <span>Contact</span>
+                <a href={"/about/"}> Kevin Ellis </a>
             </div>
         )
     }
